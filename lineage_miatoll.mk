@@ -15,6 +15,25 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Inherit from miatoll device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
+# RisingOS flags
+WITH_GMS := true
+TARGET_CORE_GMS := false
+TARGET_ENABLE_BLUR := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_HAS_UDFPS := false
+TARGET_USE_GOOGLE_TELEPHONY := true
+TARGET_PREBUILT_PIXEL_LAUNCHER := false
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := true
+PRODUCT_NO_CAMERA := false
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RISING_CHIPSET="Qualcomm Snapdragon 720G" \
+    RISING_MAINTAINER="rbnj"
+
+PRODUCT_PACKAGES += \
+    Velvet \
+    AiWallpapers \
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
